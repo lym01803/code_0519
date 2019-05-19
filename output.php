@@ -59,6 +59,21 @@
                 var sphere = new THREE.Mesh(geometry, material);
                 scene.add(sphere);
             }
+            if(item["shape"] == "cube"){
+                var a = parseFloat(item["a"]);
+                var b = parseFloat(item["b"]);
+                var c = parseFloat(item["c"]);
+                var geometry = new THREE.CubeGeometry(a, b, c);
+                var dx = parseFloat(item["x"]);
+                var dy = parseFloat(item["y"]);
+                var dz = parseFloat(item["z"]);
+                geometry.translate(dx, dy, dz);
+                var material = new THREE.MeshLambertMaterial({
+                    color: geo_color[i%geo_color.length],
+                });
+                var cube = new THREE.Mesh(geometry, material);
+                scene.add(cube);
+            }
         }
         /*var radius;
         if(Arr.hasOwnProperty("radius")){
