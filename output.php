@@ -14,11 +14,20 @@
 
 <body>
     <script>
+        function lym_min(a, b){
+            if(a < b){
+                return a;
+            }
+            return b;
+        }
         var scene = new THREE.Scene();
+        //alert(window.innerWidth);
+        var camera = new THREE.OrthographicCamera( window.innerWidth / - 25, window.innerWidth / 25, window.innerHeight / 25, window.innerHeight / - 25, 0.1, 1000 );
 
-        var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-
-        var renderer = new THREE.WebGLRenderer();
+        var renderer = new THREE.WebGLRenderer({
+            antialias:true,
+            alpha:true,
+        });
 
         light = new THREE.DirectionalLight(0xcccccc);
         light.position.set(-40, 20, 40);
@@ -69,7 +78,7 @@
         var cube = new THREE.Mesh(geometry, material);
         scene.add(cube);*/
         scene.add(light);
-        camera.position.z = 5;
+        camera.position.z = lym_min(window.innerWidth / 25, window.innerHeight / 25);
         //cube.rotation.x += 0.5;
         //cube.rotation.y += 0.5;
 
