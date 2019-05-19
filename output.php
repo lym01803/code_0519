@@ -42,7 +42,7 @@
 
         document.body.appendChild(renderer.domElement);
 
-        var geo_color=Array(0x00ff00, 0x0000ff, 0xff0000);
+        var geo_color=Array(0x00ff00, 0x0000ff, 0xff0000, 0xffff00, 0x00ffff, 0xff00ff);
         var Arr = <?php echo json_encode($_GET); ?>;
         for(var i = 0; i < Arr.length; ++i){
             var item = Arr[i];
