@@ -30,7 +30,7 @@
         });
 
         light = new THREE.DirectionalLight(0xcccccc);
-        light.position.set(-40, 20, 40);
+        light.position.set(-10, 30, 30);
         light.distance = 0;
         light.intensity = 1.8;
         scene.add(light);
@@ -78,7 +78,9 @@
         var cube = new THREE.Mesh(geometry, material);
         scene.add(cube);*/
         scene.add(light);
-        camera.position.z = lym_min(window.innerWidth / 25, window.innerHeight / 25);
+        camera.position.set(200,200,200);//设置相机位置
+        camera.lookAt(scene.position);
+        //camera.position.z = lym_min(window.innerWidth / 25, window.innerHeight / 25);
         //cube.rotation.x += 0.5;
         //cube.rotation.y += 0.5;
 
